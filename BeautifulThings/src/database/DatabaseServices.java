@@ -112,10 +112,34 @@ public class DatabaseServices {
 		
 	}
 	
-	public int updateOne(int id, BeautifulThing b) {
+	public int updateOne(int id, BeautifulThing b) throws SQLException {
 		int numberOfRowsAffected = 0;
 		
-		//database work
+		Connection c = null;
+		PreparedStatement stmt = null;
+		//int rowsAffected = 0;
+		
+		c = DriverManager.getConnection(dbURL, user, password);
+		System.out.println("Connection is successful"+dbURL);
+		
+		//create a SQL statement
+		stmt = c.prepareStatement("update beautifulthings.thingstable set thing_title = ?, thing_description = ?, thing_value = ? where id = ?");
+		
+		stmt.setString(1, b.getThingTitle());
+		stmt.setString(2, b.getThingDescription());
+		stmt.setInt(3, b.getRating());
+		stmt.setInt(4, id);
+//		stmt.setInt(4, b.getId());
+
+		//execute the statement
+		numberOfRowsAffected = stmt.executeUpdate();
+		
+		//success message
+		System.out.println("Rows effected "+numberOfRowsAffected);
+		
+		stmt.close();
+		
+		c.close();
 		
 		return numberOfRowsAffected;
 	}

@@ -12,7 +12,7 @@ import database.DatabaseServices;
 public class Demo {
 
 	public static void main(String[] args) throws SQLException {
-		
+	
 		DatabaseServices ds = new DatabaseServices();
 		
 		ds.deleteOne(4);
@@ -22,6 +22,9 @@ public class Demo {
 		
 		ArrayList<BeautifulThing> bList = new ArrayList<BeautifulThing>();
 		bList = ds.readAll();
+		
+		BeautifulThing b = new BeautifulThing(0, "Birds", "They make my day happy", 8);
+		ds.updateOne(12, b);
 		
 //		//This again prints the List
 //		System.out.println("========== These are a few beautiful things ============");
