@@ -38,4 +38,11 @@ when u select Team more options (Commit, push etc.) will be visible.
 4. Copy the token
 5. Eveytime Eclipse asks for password use the access token
 
+### Making the parent folder(project folder) as the local repository
+
+1. Right click on project >  Team > Share Project
+2. Check the dialoge box "Use or create repository in..."
+3. Select the project
+4. Click "Create Repository" > Finish
+
 
