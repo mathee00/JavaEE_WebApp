@@ -1,4 +1,4 @@
-# JavaEE_WebApp_CRUD
+# JavaEE_WebApp
 #### This is a sample project to practice CRUD operations of Java EE Web App.
 
 ## How to push an Eclipse project to GitHub
